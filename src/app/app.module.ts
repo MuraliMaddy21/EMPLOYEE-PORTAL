@@ -9,6 +9,8 @@ import { PayslipComponent } from './payslip/payslip.component';
 import { EmpleaveComponent } from './empleave/empleave.component';
 import { PayslipPdfComponent } from './payslip-pdf/payslip-pdf.component';
 import { ErrorComponent } from './error/error.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ErrorComponent } from './error/error.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

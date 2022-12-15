@@ -9,7 +9,7 @@
 
 <body>
             <div class="top">
-            <img src="\assets\KT_15_Logo.png" height="150px"></div>
+            <img src="\assets\KT_15_Logo.png" height="180px"></div>
     
     <div class="left">
         <h1>
@@ -25,9 +25,9 @@
         </h1>
         <form>
             <div class="text-field">
-                <input type="text" [value]="customerid" name="customerid" (input)="customerid=($any($event.target).value)"  required>
+                <input type="text" [value]="customerid" name="empid" (input)="customerid=($any($event.target).value)"  required>
                 <span></span>
-                <label>CUSTOMER-ID</label>
+                <label>EMPLOYEE-ID</label>
             </div>
             <div class="text-field">
                 <input type="password" [value]="password" (input)="password=($any($event.target).value)"  required>
