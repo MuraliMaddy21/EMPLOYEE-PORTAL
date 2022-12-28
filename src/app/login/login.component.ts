@@ -9,7 +9,7 @@ import { HttpClient} from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  customerid:any=""
+  empid:any=""
   password:any="";
   json:any
   result:any
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   validate()
   {
    this.json={
-    "customerid":this.customerid,
+    "empid":this.empid,
     "password":this.password
    }
    console.log(this.json)
@@ -35,12 +35,12 @@ export class LoginComponent implements OnInit {
    {
       this.result = response
       console.log(this.result)
-      console.log(this.result['Envelope']['Body']['ZFM_LOGIN_EP_MDResponse']['E_MESSAGE'].toString())
-      this.status=this.result['Envelope']['Body']['ZFM_LOGIN_EP_MDResponse']['E_MESSAGE']
+      console.log(this.result['Envelope']['Body']['ZFM_LOGIN_EP_MD.Response']['RETCODE'].toString())
+      this.status=this.result['Envelope']['Body']['ZFM_LOGIN_EP_MD.Response']['RETCODE']
       if(this.status == 'S')
       {
          window.alert("Login Successful")
-        this.route.navigate(["/dashboard"]);
+        this.route.navigate(["/profile"]);
       }
       else
       {

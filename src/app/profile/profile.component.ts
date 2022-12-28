@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +9,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  name:any="";
+  empid:any=""
+  street:any=""
+  name2:any=""
+  dob:any=""
+  city:any=""
+  district:any=""
+  country:any=""
+  telenum:any=""
+  result:any
+  postcode:any=""
+  role:any=""
+  practice:any=""
+
+  constructor(private route:Router,private http:HttpClient) { }
 
   ngOnInit(): void {
-  }
 
+    this.http.get("http://localhost:3030/epprofile",{responseType:'json'}).subscribe((response)=>
+    {
+      console.log(response)
+      this.result = response
+      this.name = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].ENAME
+      this.name2 = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].NACHN
+      this.dob = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].GBDAT
+      this.empid = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].PERNR
+      this.country = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].LAND
+      this.street = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].STRAS
+      this.telenum = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].TELNR
+      this.city = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].ORT01
+      this.postcode = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].PSTLZ
+      this.role=this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].PLANS_TXT
+      this.practice=this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].ORGEH_TXT
+      
+
+    });
+  }
 }
+
+
