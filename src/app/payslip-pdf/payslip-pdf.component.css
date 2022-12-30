@@ -74,7 +74,7 @@ body{
 .dashboard{
     border:2px solid transparent;
     box-shadow: .2px .2px 1px .2px gray;
-    height: 42.6rem;
+    height: 100;
     width: 90%;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
@@ -229,4 +229,14 @@ input::placeholder{
     font-family: 'Poppins';
     letter-spacing: 1px;
 }
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 2rem;
+    
+    height: 20%;
+    size: 2rem;
+  }
+
 

@@ -26,6 +26,15 @@ export class LoginComponent implements OnInit {
 
   validate()
   {
+    if(this.empid=="")
+    {
+      window.alert("Please fill Employee-ID");
+    }
+    if(this.password=="")
+    {
+      window.alert("Please fill Password");
+
+    }
    this.json={
     "empid":this.empid,
     "password":this.password

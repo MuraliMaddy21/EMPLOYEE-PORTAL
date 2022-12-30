@@ -46,6 +46,29 @@
                     <br>
                     
                     <br>
+
+                       
+                    <table>
+                        
+                        <th>SEQUENCE NUMBER</th>
+                        <th> BEGIN </th>
+                        <th>END  </th>
+                        <th>PAY TYPE</th>
+                        <th>PAYDATE</th>
+                        <th>PERIOD</th>
+                        
+
+                    <tr style="height:200px" *ngFor="let entries of this.items">
+                        <td><h4>{{entries.SEQUENCENUMBER}}</h4></td>
+                        <td><h4>{{entries.FPBEGIN}}</h4></td>
+                        <td><h4>{{entries.FPEND}}</h4></td>
+                        <td><h4>{{entries.PAYTYPE_TEXT}}</h4></td>
+                        <td><h4>{{entries.PAYDATE}}</h4></td>
+                        <td><h4>{{entries.FPPERIOD}}</h4></td>
+                        
+                    </tr>
+                </table>
+                    
                     
                     
                 </div>

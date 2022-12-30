@@ -245,5 +245,11 @@ input::placeholder{
 .rightbar h4:hover{
     background-color: gold; 
 }
+.time
+{
+    margin-top: 0.5rem;
+    margin-left:42rem;
+}
+
 
 
