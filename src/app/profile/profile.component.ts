@@ -33,6 +33,7 @@ export class ProfileComponent implements OnInit {
     this.http.get("http://localhost:3030/epprofile",{responseType:'json'}).subscribe((response)=>
     {
       console.log(response)
+      this.result = response
       this.empid = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].PERNR
       if(this.empid=="")
       {
@@ -40,7 +41,6 @@ export class ProfileComponent implements OnInit {
        this.route.navigate([""])
       }
       else{
-      this.result = response
       this.name = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].ENAME
       this.name2 = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].NACHN
       this.dob = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].GBDAT
