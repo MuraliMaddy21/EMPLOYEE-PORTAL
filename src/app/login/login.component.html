@@ -30,11 +30,13 @@
                 <label>EMPLOYEE-ID</label>
             </div>
             <div class="text-field">
-                <input type="password" [value]="password" (input)="password=($any($event.target).value)"  required>
+                <input type="password" [value]="password" id="myInput" (input)="password=($any($event.target).value)"  required>
                 <label>Password</label>
                 <span></span>
+                
             </div>
-           
+            <input type="checkbox" (click)="myFunction()" >Show Password
+       
 
         </form>
        
