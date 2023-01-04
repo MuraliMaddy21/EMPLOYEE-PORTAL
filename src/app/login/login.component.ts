@@ -27,15 +27,22 @@ export class LoginComponent implements OnInit {
 
   validate()
   {
-    if(this.empid=="")
+    if(this.empid=="" && this.password=="")
+    {
+      window.alert("Please fill Employee-ID and Password");
+    }
+    else if(this.empid=="")
     {
       window.alert("Please fill Employee-ID");
+
     }
-    if(this.password=="")
+    else if(this.password=="")
     {
       window.alert("Please fill Password");
 
     }
+    else
+    {
    this.json={
     "empid":this.empid,
     "password":this.password
@@ -58,6 +65,7 @@ export class LoginComponent implements OnInit {
       }
 
    }))
+  }
    
 
   }
