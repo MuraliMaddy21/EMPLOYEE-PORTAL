@@ -45,4 +45,13 @@ export class EmpleaveComponent implements OnInit {
 
   }
 
+  shutdown()
+  {
+    this.http.get('http://localhost:3030/shutdown',{responseType:'json'}).subscribe((data)=>
+    {
+      
+    });
+    
+    this.route.navigate([""]);
+  }
 }

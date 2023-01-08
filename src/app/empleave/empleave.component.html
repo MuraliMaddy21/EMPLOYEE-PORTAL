@@ -43,6 +43,16 @@
               
 
                 <div class="rightbar">
+
+                    <div class="time">
+                        TIME:{{time}}
+                    </div>
+    
+                    
+                    <div class="shutdown">
+                        <button class="log"  (click)="shutdown()">LOGOUT👋</button>
+                    </div>
+                    
                     <br>
                     
                     <br>
@@ -54,17 +64,17 @@
                         <th> ABSENCE HOURS </th>
                         <th>ABSENCE TYPE  </th>
                         <th>NAME OF ABSENCE TYPE</th>
-                        <th>BEGIN</th>
+                        <th>START</th>
                         <th>END</th>
                         
 
                     <tr style="height:200px" *ngFor="let entries of this.items">
-                        <td><h4>{{entries.ABSENCEDAYS}}</h4></td>
-                        <td><h4>{{entries.ABSENCEHOURS}}</h4></td>
+                        <td><h4>{{entries.ABSENCEDAYS | number}}</h4></td>
+                        <td><h4>{{entries.ABSENCEHOURS | number}}</h4></td>
                         <td><h4>{{entries.ABSENCETYPE}}</h4></td>
                         <td><h4>{{entries.NAMEOFABSENCETYPE}}</h4></td>
-                        <td><h4>{{entries.VALIDBEGIN}}</h4></td>
-                        <td><h4>{{entries.VALIDEND}}</h4></td>
+                        <td><h4>{{entries.VALIDBEGIN |  date: 'dd/MM/yyyy'}}</h4></td>
+                        <td><h4>{{entries.VALIDEND | date: 'dd/MM/yyyy'}}</h4></td>
                         
                     </tr>
                 </table>

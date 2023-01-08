@@ -37,6 +37,14 @@
 
             <div class='dashboard'>
                 <H2 align="center">EMPLOYEE PORTAL-PROFILE</H2>
+                <div class="time">
+                    TIME:{{time}}
+                </div>
+
+                
+                <div class="shutdown">
+                    <button class="log"  (click)="shutdown()">LOGOUT👋</button>
+                </div>
 
                
 
@@ -47,10 +55,10 @@
                     
                     <br>
                     
-                    <h4>EMPLOYEE-ID:{{empid}}</h4>
+                    <h4>EMPLOYEE-ID:{{empid | number}}</h4>
                     <h4>FIRST NAME:{{name}}</h4>
                     <h4>LAST NAME:{{name2}}</h4>
-                    <h4>DATE OF BIRTH:{{dob}}</h4>
+                    <h4>DATE OF BIRTH:{{dob | date}}  </h4>
                     <H4>PRACTICE:{{practice}}</H4>
                     <H4>POSITION:{{position}}</H4>
                     <h4>POSTCAL CODE:{{postcode}}</h4>
