@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
   role:any=""
   practice:any=""
   time:any
+  position:any;
 
   constructor(private route:Router,private http:HttpClient) { }
 
@@ -51,6 +52,7 @@ export class ProfileComponent implements OnInit {
       this.postcode = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].PSTLZ
       this.role=this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].PLANS_TXT
       this.practice=this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].ORGEH_TXT
+      this.position=this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].PLANS_TXT
       }
       
 
