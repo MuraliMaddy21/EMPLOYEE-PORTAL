@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -11,6 +10,12 @@ import { PayslipPdfComponent } from './payslip-pdf/payslip-pdf.component';
 import { ErrorComponent } from './error/error.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';          
+import { FilterPipe } from './empleave/filter.pipe';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,12 +25,17 @@ import { HttpClientModule } from '@angular/common/http';
     PayslipComponent,
     EmpleaveComponent,
     PayslipPdfComponent,
-    ErrorComponent
+    ErrorComponent,
+    FilterPipe
+     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    FormsModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -53,11 +53,13 @@
                         <button class="log"  (click)="shutdown()">LOGOUT👋</button>
                     </div>
                     
-                    <br>
-                    
-                    <br>
+    
+                    <div class="filter">
+                    <input type="text" class="form-control" placeholder="Filter by Abscence Type" [(ngModel)]="filterdata" />
+                   
+                </div>
+                <br>
 
-                     
                     <table>
                         
                         <th>ABSENCE DAYS</th>
@@ -68,16 +70,20 @@
                         <th>END</th>
                         
 
-                    <tr style="height:200px" *ngFor="let entries of this.items">
+                    <tr style="height:200px" *ngFor="let entries of this.items | filterpipe:filterdata ">
+
                         <td><h4>{{entries.ABSENCEDAYS | number}}</h4></td>
                         <td><h4>{{entries.ABSENCEHOURS | number}}</h4></td>
-                        <td><h4>{{entries.ABSENCETYPE}}</h4></td>
+                        <td><h4>{{entries.ABSENCETYPE }}</h4></td>
                         <td><h4>{{entries.NAMEOFABSENCETYPE}}</h4></td>
                         <td><h4>{{entries.VALIDBEGIN |  date: 'dd/MM/yyyy'}}</h4></td>
                         <td><h4>{{entries.VALIDEND | date: 'dd/MM/yyyy'}}</h4></td>
                         
                     </tr>
                 </table>
+            
+
+             
                     
                     
                 </div>
