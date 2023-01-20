@@ -53,17 +53,56 @@
                 <div class="rightbar">
                     
                     
-                    <h4>EMPLOYEE-ID:{{empid | number}}</h4>
-                    <h4>FIRST NAME:{{name}}</h4>
-                    <h4>LAST NAME:{{name2}}</h4>
-                    <h4>DATE OF BIRTH:{{dob | date}}  </h4>
-                    <H4>PRACTICE:{{practice}}</H4>
-                    <H4>POSITION:{{position}}</H4>
-                    <h4>POSTCAL CODE:{{postcode}}</h4>
-                    <h4>STREET:{{street}}</h4>
-                    <H4>CITY:{{city}}</H4>
-                    <H4>COUNTRY:{{country}}</H4>
-                    <H4>TELEPHONE NUMBER:{{telenum}}</H4>
+                    <table>
+                        <tr>
+                            <td>CUSTOMERID</td>
+                            <td>{{empid | number}}</td>
+                        </tr>
+                        <tr>
+                            <td>FIRST NAME</td>
+                            <td>{{name}}</td>
+                        </tr>
+                        <tr>
+                            <td>LAST NAME</td>
+                            <td>{{name2}}</td>
+                        </tr>
+                        <tr>
+                            <td>DATE OF BIRTH</td>
+                            <td>{{dob | date}}</td>
+                        </tr>
+                        <tr>
+                            <td>STREET</td>
+                            <td>{{street}}</td>
+                        </tr>
+                        <tr>
+                            <td>CITY</td>
+                            <td>{{city}}</td>
+                        </tr>
+                        <tr>
+                            <td>POSTAL CODE</td>
+                            <td>{{postcode }}</td>
+                        </tr>
+                        <tr>
+                            <td>TELEPHONE NUMBER</td>
+                            <td>{{telenum}}</td>
+                        </tr>
+                        <tr>
+                            <td>COUNTRY</td>
+                            <td>{{country}}</td>
+                        </tr>
+                        <tr>
+                            <td>ROLE</td>
+                            <td>{{role}}</td>
+                        </tr>
+                        <tr>
+                            <td>PRACTICE</td>
+                            <td>{{practice}}</td>
+                        </tr>
+                        <tr>
+                            <td>POSITION</td>
+                            <td>{{position}}</td>
+                        </tr>
+                       </table>
                     
                 </div>
 

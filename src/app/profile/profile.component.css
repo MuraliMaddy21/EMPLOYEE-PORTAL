@@ -229,21 +229,18 @@ input::placeholder{
     letter-spacing: 1px;
 }
 
-.rightbar{
-    margin-top: 0.5rem;
-    border: solid;
-    border-width: 0.5rem;
-    border-color:black;
-    
-}
+table, th, td {
+    border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 11px;
+  }
 
-.rightbar h4{
-    padding-left: 2rem;
-}
+  .rightbar  td:hover{
+    background-color: gold;
+  }
 
-.rightbar h4:hover{
-    background-color: silver; 
-}
 .time
 {
     margin-top: 0.5rem;

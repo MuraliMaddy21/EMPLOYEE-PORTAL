@@ -16,10 +16,11 @@ export class FilterPipe implements PipeTransform {
     }
 
     const items=[];
-
+    filterString=filterString.toUpperCase();
+    
     for(const entries of value)
     {
-      if(entries['NAMEOFABSENCETYPE'].includes(filterString))
+      if(entries['NAMEOFABSENCETYPE'].toUpperCase().includes(filterString))
       {
         items.push(entries);
       }
