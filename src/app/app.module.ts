@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';          
 import { FilterPipe } from './empleave/filter.pipe';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -34,7 +35,8 @@ import { FilterPipe } from './empleave/filter.pipe';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   
   ],
   providers: [],

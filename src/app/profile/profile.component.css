@@ -230,11 +230,11 @@ input::placeholder{
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1.5px solid black;
   }
   
   th, td {
-    padding: 11px;
+    padding: 7px;
   }
 
   .rightbar  td:hover{
@@ -244,7 +244,7 @@ table, th, td {
 .time
 {
     margin-top: 0.5rem;
-    margin-left:42rem;
+    margin-left:40rem;
 }
  .shutdown
 {
@@ -256,6 +256,7 @@ table, th, td {
     color: rgb(104, 85, 224);
     background-color: rgba(255, 255, 255, 1);
     border: 3px solid rgba(104, 85, 224, 1);
+    margin-top: 4px;
   }
 
   button:hover {
@@ -263,6 +264,12 @@ table, th, td {
     width: 100px;;
     box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
     background-color: rgba(104, 85, 224, 1);
+  }
+
+  .matcard
+  {
+    background-color:#C0C0C0;
+    
   }
 
 

@@ -44,14 +44,16 @@
 
                 <div class="rightbar">
 
-                    <div class="time">
-                        TIME:{{time}}
-                    </div>
-    
-                    
                     <div class="shutdown">
                         <button class="log"  (click)="shutdown()">LOGOUT👋</button>
                     </div>
+    
+                    <div class="time">
+                        <mat-card class="matcard">
+                            <mat-card-content>TIME:{{time}}</mat-card-content>
+                          </mat-card>
+                    </div>
+                    <br>
                     
     
                     <div class="filter">
