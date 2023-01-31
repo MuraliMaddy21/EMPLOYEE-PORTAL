@@ -1,13 +1,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+
 *
 {
     font-family: 'Poppins',sans-serif;
 }
 
 body{
-    background: linear-gradient(to left,rgb(253, 250, 255),rgb(255, 246, 246),rgb(245, 251, 255),rgb(255, 244, 251));
+   
+    background-color: #FEFEFE;
     
 }
 .WEL
@@ -18,29 +20,30 @@ body{
 }
 .container,.left-sidebar,.left-sidebar div,.box-container,.box,.box-row,.buttons-container{
     display: flex;
+    
 }
 
 .container,.left-sidebar div,.box-container,.box-row,.buttons-container{
     flex-direction: row;
+   
 }
 
 .top-left-sidebar-link,.left-sidebar div:nth-child(2) ion-icon,.buttons,.search-icon{
     color:white;
+    
+   
 }
 
 .left-sidebar-links,.left-sidebar-links,ion-icon{
     color:rgb(4, 14, 84);
+    
 }
 
-.top-bar,.box{
-    background: white;
-}
 
 .top-bar{
     margin: -1px 0px 0px -22px;
     width: 106.9%;
     height: 5rem;
-    background: white;
     box-shadow: .2px .2px 10px .2px white;
     background: linear-gradient(to left,rgb(253, 254, 255),rgb(255, 255, 255));
     border-top-right-radius:8px ;
@@ -55,7 +58,7 @@ body{
 }
 
 .left-sidebar,.dashboard{
-    background: linear-gradient(to left,white,transparent,white,transparent);
+    
     margin: 20px 0px 0px 0px;
     padding:0px 0px 0px 22px;
 }
@@ -68,7 +71,8 @@ body{
     gap: 52px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    background: linear-gradient(to left,white,transparent,white,transparent);
+    background-image: url(https://img.freepik.com/free-vector/white-abstract-background-design_23-2148825582.jpg?w=996&t=st=1675172336~exp=1675172936~hmac=a1ad8880cfc75fd0af69ab8e46b29021dc7fa6ab92a3c27b5e9d6efd22e1fbe6);
+    
 }
 
 .dashboard{
@@ -86,8 +90,7 @@ body{
     padding: 13px 2px 17px 22px;
     margin: 0px 0px 0px -22px;
     letter-spacing: -2px;
-    border-radius: none;
-    background-color: #0C7ECF;
+   background-color: #0C7ECF;
 }
 
 .dashboard h2{
@@ -104,7 +107,7 @@ body{
     padding:6px 12px 10px 31px;
     margin: -20px 0px 0px -9px;
     box-shadow: .2px .2px 3px .2px rgb(218, 217, 217);
-    background: linear-gradient(to left,white,transparent,white,transparent);
+    
     border-radius: 2px;
 }
 
@@ -121,6 +124,7 @@ a{
     letter-spacing: 1px;
     margin: 4px 0px 0px -3px;
     font-family: 'Poppins';
+    
 }
 
 .box-container{
@@ -229,28 +233,19 @@ input::placeholder{
     letter-spacing: 1px;
 }
 
-table, th, td {
-    border: 1.5px solid black;
-  }
-  
-  th, td {
-    padding: 7px;
-  }
 
-  .rightbar  td:hover{
-    background-color: gold;
-  }
+
 
 .time
 {
     margin-top: 0.5rem;
     margin-left:40rem;
 }
- .shutdown
+.shutdown
 {
   margin-left:68rem;
   align-content: right;
-}
+}  
 
 .log {
     color: rgb(104, 85, 224);
@@ -266,11 +261,41 @@ table, th, td {
     background-color: rgba(104, 85, 224, 1);
   }
 
+  table, th, td {
+    border: 1px solid black;
+    align-items: center;
+  }
+  
+  th, td {
+    padding: 11px;
+  }
+
+  .rightbar  td:hover{
+    background-color: gold;
+  }
+
   .matcard
   {
-    background-color:#C0C0C0;
+    background-color:#019CE0;
     
   }
 
+  .dashboard,.shutdown,.time,.rightbar{
+    background-image: url(https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-63452.jpg?w=1380&t=st=1675173247~exp=1675173847~hmac=9cc566e9a33efea7b0c4fb8ba7fa05d48c17aed75efcc194db84cdaf3f6fe0d1);
+    background-size: cover;
 
+  }
 
+  .dropdown-content button
+  {
+    margin-top: 41px;
+    margin-right: 5px;
+    background-color: #0C7ECF;
+  }
+   
+  .dropdown-content button:hover
+  {
+    background-color: #0C7ECF;
+    transform:scale(1.2);
+   
+  }
