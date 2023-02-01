@@ -51,4 +51,12 @@ export class PayslipPdfComponent implements OnInit {
     this.route.navigate([""]);
   }
 
+  print()
+  {
+    this.http.get('http://localhost:3030/pdf',{responseType:'json'}).subscribe((data)=>
+    {
+      console.log(data);
+    });
+  }
+
 }
