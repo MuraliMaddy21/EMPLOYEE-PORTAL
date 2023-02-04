@@ -60,18 +60,18 @@
                     
                     <br>
 
-                    <button  (click)="print()">PRINT PAYLSIP🖨</button>
+                    <button  (click)="print()">PRINT PAYLSIP🖨</button><br><br>
+                    <button  (click)="exporttoexcel()">EXPORT TO EXCEL</button>
 
                     <br>
-                    <table>
+                    <table id="excel-table">
                         
-                        <th>SEQUENCE
-                            NUMBER</th>
-                        <th> START </th>
-                        <th>END  </th>
-                        <th>PAY TYPE</th>
-                        <th>PAYDATE</th>
-                        <th>PERIOD</th>
+                        <th>Sequence Number</th>
+                        <th> Start Date </th>
+                        <th>End Date  </th>
+                        <th>Pay Type</th>
+                        <th>Pay Date</th>
+                        <th>Period</th>
                         
 
                     <tr style="height:200px" *ngFor="let entries of this.items">

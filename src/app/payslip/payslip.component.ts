@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
+import * as XLSX from 'xlsx';
+
 
 @Component({
   selector: 'app-payslip',
@@ -13,6 +14,8 @@ export class PayslipComponent implements OnInit {
   items: any = "";
   result: any = ""
   time: any;
+  fileName = 'ExcelSheet.xlsx';
+  tdays:any="";
 
 
   constructor(private route: Router, private http: HttpClient) { }
@@ -53,6 +56,14 @@ export class PayslipComponent implements OnInit {
     this.http.get('http://localhost:3030/pdf', { responseType: 'json' }).subscribe((data) => {
       console.log(data);
     });
+  }
+
+  exporttoexcel(): void {
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, this.fileName);
   }
 
 }
