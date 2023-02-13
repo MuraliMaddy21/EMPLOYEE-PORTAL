@@ -17,6 +17,7 @@ export class EmpleaveComponent implements OnInit {
   result:any=""
   time:any
   filterdata:any="";
+  spinner:any;
 
 
 
@@ -43,6 +44,9 @@ export class EmpleaveComponent implements OnInit {
 
     this.http.get("http://localhost:3030/epempleave",{responseType:'json'}).subscribe((response)=>
     {
+      if (Response) {
+        this.hideloader();
+    }
       console.log(response)
       this.result=response;
       this.items=this.result['Envelope']['Body']['ZFM_EP_EMPLEAVE_MD.Response']['IT_EMPLEAVE']['item'];
@@ -50,6 +54,8 @@ export class EmpleaveComponent implements OnInit {
       
 
     });
+
+   
 
     
 
@@ -65,6 +71,13 @@ export class EmpleaveComponent implements OnInit {
     });
     
     this.route.navigate([""]);
+  }
+
+  hideloader()
+  {
+    this.spinner=document.getElementById('loading');
+    this.spinner .style.display = 'none';
+    
   }
 
   

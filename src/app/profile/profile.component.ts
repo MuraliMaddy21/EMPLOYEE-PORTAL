@@ -24,6 +24,7 @@ export class ProfileComponent implements OnInit {
   practice:any=""
   time:any
   position:any;
+  spinner:any;
 
   constructor(private route:Router,private http:HttpClient) { }
 
@@ -33,6 +34,9 @@ export class ProfileComponent implements OnInit {
 
     this.http.get("http://localhost:3030/epprofile",{responseType:'json'}).subscribe((response)=>
     {
+      if (Response) {
+        this.hideloader();
+    }
       console.log(response)
       this.result = response
       this.empid = this.result['Envelope']['Body']['ZFM_PROFILE_EP_MD.Response']['E_EMPDATA'].PERNR
@@ -66,6 +70,13 @@ export class ProfileComponent implements OnInit {
     });
     
     this.route.navigate([""]);
+  }
+
+  hideloader()
+  {
+    this.spinner=document.getElementById('loading');
+    this.spinner .style.display = 'none';
+    
   }
 }
 

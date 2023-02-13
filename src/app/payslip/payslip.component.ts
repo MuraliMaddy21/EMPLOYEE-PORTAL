@@ -16,6 +16,7 @@ export class PayslipComponent implements OnInit {
   time: any;
   fileName = 'ExcelSheet.xlsx';
   tdays:any="";
+  spinner:any;
 
 
   constructor(private route: Router, private http: HttpClient) { }
@@ -36,6 +37,9 @@ export class PayslipComponent implements OnInit {
     })
 
     this.http.get("http://localhost:3030/eppayslip", { responseType: 'json' }).subscribe((response) => {
+      if (Response) {
+        this.hideloader();
+    }
       console.log(response)
       this.result = response;
       this.items = this.result['Envelope']['Body']['ZFM_EP_EMPPAYSLIP_MD.Response']['IT_PAY']['item']
@@ -64,6 +68,13 @@ export class PayslipComponent implements OnInit {
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     XLSX.writeFile(wb, this.fileName);
+  }
+
+  hideloader()
+  {
+    this.spinner=document.getElementById('loading');
+    this.spinner .style.display = 'none';
+    
   }
 
 }
