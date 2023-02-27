@@ -15,6 +15,9 @@ export class LoginComponent implements OnInit {
   result:any
   status:any
   x:any
+  gotp:any=""
+  lotp:any=""
+  json2:any
  
 
   constructor(private route:Router,private http:HttpClient) { }
@@ -78,6 +81,31 @@ export class LoginComponent implements OnInit {
     } else {
       this.x.type = "password";
     }
+  }
+
+  getOtp()
+  {
+    this.lotp = 0;
+    var digits = '0123456789';
+  
+    for(let i=0;i<6;i++)
+    {
+      this.lotp += digits[Math.floor(Math.random()*10)]
+    }
+    console.log(this.lotp);
+    window.alert("OTP SENT SUCCESSFULLY")
+    this.json2=
+    {
+      "otp":this.lotp
+    }
+    this.http.post('http://localhost:3030/otp',this.json2,{responseType:'json'}).subscribe((response)=>
+   {
+      this.result = response
+      console.log(this.result)
+   })
+
+    return this.lotp
+
   }
 }
 
