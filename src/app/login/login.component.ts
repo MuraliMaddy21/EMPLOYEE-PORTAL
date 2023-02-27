@@ -44,6 +44,12 @@ export class LoginComponent implements OnInit {
       window.alert("Please fill Password");
 
     }
+    else if(this.gotp=="")
+    {
+      window.alert("Please fill OTP");
+
+    }
+
     else
     {
    this.json={
@@ -57,7 +63,7 @@ export class LoginComponent implements OnInit {
       console.log(this.result)
       console.log(this.result['Envelope']['Body']['ZFM_LOGIN_EP_MD.Response']['RETCODE'].toString())
       this.status=this.result['Envelope']['Body']['ZFM_LOGIN_EP_MD.Response']['RETCODE']
-      if(this.status == 'S')
+      if(this.status == 'S' && this.gotp==this.lotp)
       {
          window.alert("Login Successful")
         this.route.navigate(["/profile"]);
